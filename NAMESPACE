@@ -2,3 +2,6 @@
 
 export(fbind)
 export(freq_out)
+export(in_desc)
+export(is_char)
+importFrom("stats", "reorder")

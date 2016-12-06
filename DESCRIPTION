@@ -17,7 +17,7 @@ Suggests:
     knitr,
     rmarkdown
 Imports:
-    dplyr
+    dplyr, stats
 VignetteBuilder: knitr
 URL: https://github.com/angelabkim/foofactors
 BugReports: https://github.com/angelabkim/foofactors/issues

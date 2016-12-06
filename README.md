@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-**NOTE: This is a toy package created for expository purposes. It is not meant to actually be useful. If you want a package for factor handling, please see [forcats](https://cran.r-project.org/package=forcats).**
+This is a toy package created as a homework assignment using Jenny's [foofactors](https://github.com/jennybc/foofactors) as a template. It is not meant to be actually useful. Scroll below to see my two additions to Jenny's existing functions.
 
 ### foofactors
 
@@ -11,7 +11,7 @@ Factors are a very useful type of variable in R, but they can also drive you nut
 devtools::install_github("jennybc/foofactors")
 ```
 
-### Quick demo
+### Quick demo of Jenny's functions
 
 Binding two factors via `fbind()`:
 
@@ -67,4 +67,42 @@ freq_out(x)
 #> 3      c    17
 #> 4      d    17
 #> 5      e    15
+```
+
+### Demo of my functions
+
+-   The `is_char()` function detects factors that should be character because the number of unique values equals its length.
+
+Example:
+
+``` r
+# Factor that should be a charactor
+d <- factor(c('Black', 'Green', 'White')) 
+
+# Not a charactor
+e <- factor(c('Black', 'Green', 'Green'))
+```
+
+The function returns TRUE or FALSE:
+
+``` r
+is_char(d)
+#> [1] TRUE
+is_char(e)
+#> [1] FALSE
+```
+
+-   The function `in_desc()` reorders factors in descending order.
+
+Example:
+
+``` r
+f <- factor(c('Alex', 'Bear', 'Cody'))
+```
+
+Function reorders:
+
+``` r
+levels(in_desc(f))
+#> [1] "Cody" "Bear" "Alex"
 ```

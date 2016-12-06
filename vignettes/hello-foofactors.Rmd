@@ -48,3 +48,29 @@ The `freq_out()` function returns a frequency table as a well-named `tbl_df`:
 freq_out(x)
 ```
 
+
+The `is_char()` function detects factors that should be character because the number of unique values equals its length. 
+
+Example: 
+```{r}
+# Factor that should be a charactor
+d <- factor(c('Black', 'Green', 'White')) 
+
+# Not a charactor
+e <- factor(c('Black', 'Green', 'Green'))
+
+# Returns TRUE or FALSE:
+is_char(d)
+is_char(e)
+
+```
+
+
+The function `in_desc()` reorders factors in descending order:
+
+```{r}
+f <- factor(c('Alex', 'Bear', 'Cody'))
+
+levels(in_desc(f))
+```
+
